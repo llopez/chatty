@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <%= flash.inspect %>
+
+    <% if current_user %>
+      <span> Welcome <%= current_user.name %></span>
+      <%= link_to "logout", session_path, method: 'delete' %>
+    <% else %>
+      <%= link_to "login", new_sessions_path %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
