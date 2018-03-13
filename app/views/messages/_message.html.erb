@@ -1,2 +1,16 @@
-<%= message.author.name %>: <%= message.body %>
-<br>
+<article class="media">
+  <div class="media-left">
+    <figure class="image is-64x64">
+      <img src="http://placehold.it/128x128" alt="Image">
+    </figure>
+  </div>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong><%= message.author.name %></strong> <small><%= message.author.email %></small> <small style="float:right;"><time class='timeago' datetime='<%= message.created_at.iso8601 %>'><%= message.created_at%></time></small>
+        <br>
+        <%= message.body %>
+      </p>
+    </div>
+  </div>
+</article>

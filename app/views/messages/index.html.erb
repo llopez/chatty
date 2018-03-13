@@ -1,5 +1,16 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+      Chat Room
+    </h1>
+    <p class="subtitle">
+      My first chat application, powered by <strong>ActionCable</strong>.
+    </p>
 
-<%= render @messages %>
-<%= render 'form' %>
+    <div class='box' id='messages' style='overflow-y:scroll; height: 400px'>
+      <%= render @messages %>
+    </div>
+
+    <%= render 'form' %>
+  </div>
+</section>

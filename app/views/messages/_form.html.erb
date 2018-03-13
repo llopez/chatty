@@ -1,4 +1,10 @@
-<%= form_for Message.new do |f| %>
-  <%= f.text_area :body %>
-  <%= f.submit 'Send' %>
+<%= form_for Message.new, remote: true do |f| %>
+  <div class="field is-grouped">
+    <p class="control is-expanded">
+      <%= f.text_field :body, class: 'input', placeholder: 'type ...' %>
+    </p>
+    <p class="control">
+      <%= f.submit 'Send', class: 'button is-info' %>
+    </p>
+  </div>
 <% end %>
