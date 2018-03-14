@@ -1,0 +1,45 @@
+<section class="hero is-fullheight" id='login'>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-grey">Sign Up</h3>
+        <div class="box">
+          <figure class="avatar">
+            <%= image_tag 'avatar.png' %>
+          </figure>
+          <%= form_for @user, url: registrations_path do |f| %>
+            <div class="field">
+              <div class="control">
+                <%= f.email_field :email, class: "input is-large #{@user.errors[:email].any? ? 'is-danger' : nil}", placeholder: 'Email' %>
+              </div>
+              <p class="help is-danger"><%= @user.errors[:email].join(', ') %></p>
+            </div>
+            <div class="field">
+              <div class="control">
+                <%= f.text_field :name, class: "input is-large #{@user.errors[:name].any? ? 'is-danger' : nil}", placeholder: 'Name' %>
+              </div>
+              <p class="help is-danger"><%= @user.errors[:name].join(', ') %></p>
+            </div>
+            <div class="field">
+              <div class="control">
+                <%= f.password_field :password, class: "input is-large #{@user.errors[:password].any? ? 'is-danger' : nil}", placeholder: 'Password' %>
+              </div>
+              <p class="help is-danger"><%= @user.errors[:password].join(', ') %></p>
+            </div>
+            <div class="field">
+              <div class="control">
+                <%= f.password_field :password_confirmation, class: "input is-large #{@user.errors[:password_confirmation].any? ? 'is-danger' : nil}", placeholder: 'Confirmation' %>
+              </div>
+              <p class="help is-danger"><%= @user.errors[:password_confirmation].join(', ') %></p>
+            </div>
+            <%= f.submit 'Sign Up', class: 'button is-block is-info is-large is-fullwidth' %> 
+          <% end %>
+        </div>
+        <p class="has-text-grey">
+          <%= link_to 'Sign In', new_sessions_path %> &nbsp;·&nbsp;
+          <a href="#">Need Help?</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
