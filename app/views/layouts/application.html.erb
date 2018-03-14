@@ -9,15 +9,10 @@
   </head>
 
   <body>
+    <%= render 'shared/notifications' %>
+
     <% if current_user %>
       <%= render 'shared/navbar' %>
-    <% end %>
-
-    <%- flash.each do |name, msg| %>
-      <div class="notification is-primary">
-        <button class="delete"></button>
-        <%= msg %>
-      </div>
     <% end %>
 
     <%= yield %>

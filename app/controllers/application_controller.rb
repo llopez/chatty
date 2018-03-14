@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to new_sessions_path, notice: 'I need to login first' unless current_user
+    return true if current_user
+    flash[:error] = 'You need to be logged in to access this page'
+    redirect_to new_sessions_path
   end
 end

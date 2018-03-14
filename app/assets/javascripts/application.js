@@ -31,4 +31,8 @@ $(function() {
   $(window).resize(function () {
     resizeChat();  
   })
+  
+  setTimeout(function() {
+    $('.notification').fadeOut('fast');
+  }, 3000); 
 });
