@@ -20,4 +20,15 @@
 
 $(function() {
   $('time.timeago').timeago();
+  resizeChat();
+
+  function resizeChat() {
+    vph = $(window).height();
+    console.log(vph);
+    $('#messages').css('height', vph - 180);
+  }
+  
+  $(window).resize(function () {
+    resizeChat();  
+  })
 });

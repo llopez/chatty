@@ -9,13 +9,15 @@
   </head>
 
   <body>
-    <%= flash.inspect %>
-
     <% if current_user %>
-      <span> Welcome <%= current_user.name %></span>
-      <%= link_to "logout", session_path, method: 'delete' %>
-    <% else %>
-      <%= link_to "login", new_sessions_path %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
+    <%- flash.each do |name, msg| %>
+      <div class="notification is-primary">
+        <button class="delete"></button>
+        <%= msg %>
+      </div>
     <% end %>
 
     <%= yield %>
