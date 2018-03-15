@@ -9,5 +9,4 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
     # Called when there's incoming data on the websocket for this channel
     $('#messages').append data.message
     $('time.timeago').timeago()
-    $('#message_body').val('')
     $("#messages").scrollTop($("#messages")[0].scrollHeight);

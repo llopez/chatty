@@ -34,5 +34,9 @@ $(function() {
   
   setTimeout(function() {
     $('.notification').fadeOut('fast');
-  }, 3000); 
+  }, 3000);
+
+  $('form').bind('ajax:complete', function(){
+    $('#message_body').val('');
+  });
 });
